@@ -1,0 +1,12 @@
+[Unit]
+Description=fastcgi-wrapper.pl
+
+[Service]
+ExecStart={{ fastcgi_wrapper_script }}
+Type=forking
+User={{ fastcgi_wrapper_user }}
+Group={{ fastcgi_wrapper_group }}
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
